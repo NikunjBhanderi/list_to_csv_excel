@@ -14,6 +14,18 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('getPlatformVersion test', (WidgetTester tester) async {
-    ListToCsvExcel().getText();
+    List<String> header = [
+      "Id",
+      "Email",
+      "Password",
+    ];
+
+    List<List<String>> body = [
+      ["1", "admin@gmail.com", "admin@123"],
+      ["2", "admin@gmail.com", "admin@123"],
+      ["1", "admin@gmail.com", "admin@123"],
+    ];
+
+    await CsvFileCreate().csvFileCreate(header, body);
   });
 }
