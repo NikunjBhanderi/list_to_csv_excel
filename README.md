@@ -1,8 +1,15 @@
 # list_to_csv_excel
 
--> This flutter package to create a csv and excel file for your data in flutter applications and web apps.
--> You can create and download a csv and excel file with much less code. Do not forget to like the package...
+A new Flutter plugin project.
 
-## How to use
-**Make sure to check out [examples](https://github.com/NikunjBhanderi/multiple_selection_drop_down/blob/version-1.0.0/example/lib/main.dart) for more details.**
+## Getting Started
+
+This project is a starting point for a Flutter
+[plug-in package](https://flutter.dev/to/develop-plugins),
+a specialized package that includes platform-specific implementation code for
+Android and/or iOS.
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
 
