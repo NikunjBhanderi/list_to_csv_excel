@@ -16,8 +16,6 @@ class CsvFileCreate {
     List<String> listOfHeaderData,
     List<List<String>> listOfBodyData, {
     String? fileName,
-    Encoding encodingType = utf8,
-    String fieldDelimiter = ',',
     bool? isShareFile,
     ExportFileType? exportFileType,
   }) async {
@@ -48,11 +46,11 @@ class CsvFileCreate {
     headerAndDataList.add(listOfHeaderData);
     headerAndDataList.addAll(listOfBodyData);
 
-    String csvData = ListToCsvConverter(fieldDelimiter: fieldDelimiter)
-        .convert(headerAndDataList);
+    String csvData =
+        ListToCsvConverter(fieldDelimiter: ",").convert(headerAndDataList);
 
     if (kIsWeb) {
-      final bytes = encodingType.encode(csvData);
+      final bytes = utf8.encode(csvData);
       final blob = html.Blob([bytes]);
       final url = html.Url.createObjectUrlFromBlob(blob);
       final anchor = html.document.createElement('a') as html.AnchorElement
@@ -68,7 +66,7 @@ class CsvFileCreate {
     } else if (Platform.isAndroid || Platform.isIOS) {
       var filePath = await FileSaver.instance.saveAs(
         name: csvFileName,
-        bytes: Uint8List.fromList(encodingType.encode(csvData)),
+        bytes: Uint8List.fromList(utf8.encode(csvData)),
         ext: exportFileType == ExportFileType.csv
             ? "csv"
             : exportFileType == ExportFileType.excel
