@@ -1,0 +1,10 @@
+include: package:flutter_lints/flutter.yaml
+analyzer:
+  errors:
+    unnecessary_library_name: ignore
+    prefer_typing_uninitialized_variables: ignore
+    unintended_html_in_doc_comment: ignore
+    constant_identifier_names: ignore
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
